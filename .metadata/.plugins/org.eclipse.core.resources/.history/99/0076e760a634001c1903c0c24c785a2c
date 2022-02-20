@@ -1,0 +1,32 @@
+package org.practicesesssion;
+
+public class OverRiding extends OverLoading{
+	@Override
+	public void seenu(int a) {
+		System.out.println(a);
+		super.seenu(a);
+	}
+	@Override
+	public void seenu(String b) {
+		System.out.println(b);
+		super.seenu(b);
+	}
+	@Override
+	public void seenu(int c, String d) {
+		System.out.println(c+" "+d);
+		super.seenu(c, d);
+	}
+	@Override
+	public void seenu(int e, int f) {
+		System.out.println(e+" "+f);
+		super.seenu(e, f);
+	}
+	public static void main(String[] args) {
+		OverRiding or  = new  OverRiding();
+	or.seenu(34);	
+	or.seenu("meow");
+	or.seenu(67, "gem");
+	or.seenu(23, 35);
+	}
+
+}

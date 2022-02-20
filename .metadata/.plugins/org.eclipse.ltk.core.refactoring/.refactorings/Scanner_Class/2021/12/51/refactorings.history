@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;ReversingTheInputNumber.java&apos; to &apos;Oops_Inheritance&apos;&#x0D;&#x0A;- Original project: &apos;Scanner_Class&apos;&#x0D;&#x0A;- Destination element: &apos;Oops_Inheritance&apos;&#x0D;&#x0A;- Original element: &apos;org.classscanner.ReversingTheInputNumber.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=Oops_Inheritance" element1="/src&lt;org.classscanner{ReversingTheInputNumber.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1639574472731" units="1" version="1.0"/>
+</session>

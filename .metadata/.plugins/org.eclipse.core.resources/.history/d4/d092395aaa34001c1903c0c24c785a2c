@@ -1,0 +1,22 @@
+package org.practicesesssion;
+
+public class ChildInterface implements ParentInterface{
+
+	@Override
+	public void organisationName() {
+		System.out.println("fex");
+		
+	}
+
+	@Override
+	public void locationPincode() {
+		System.out.println(9876);
+		
+	}
+	public static void main(String[] args) {
+		ChildInterface ci =new ChildInterface();
+		ci.organisationName();
+ci.locationPincode();
+	}
+
+}

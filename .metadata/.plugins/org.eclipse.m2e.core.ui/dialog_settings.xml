@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\THIRU\eclipse-workspace\KowsalyaMamMavenClasses\WebDrivers\chromedriver.exe"/>
+			<item value="C:\Users\THIRU\eclipse-workspace\Maven_Automation_Test\pom.xml"/>
+			<item value="C:\Users\THIRU\eclipse-workspace\Maven_Automation_Test\src\main\java\Maven_Project\Maven_Automation_Test\MavenClasssOne.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.mavenproject.KowsalyaMamTestNgClasses"/>
+			<item value="com.mavenproject.MamKowsalyaNewChrome"/>
+			<item value="com.mavenproject.KowsalyaMamMavenClasses"/>
+			<item value="Maven_Project"/>
+			<item value="Maven_Project.ProjectAutomationMaven"/>
+			<item value="Maven_Project.PracticeMaven"/>
+			<item value="Maven_Project.Maven_Automation_Test"/>
+		</list>
+		<list key="groupId">
+			<item value="com.mavenproject"/>
+			<item value="Maven_Project"/>
+		</list>
+		<list key="artifactId">
+			<item value="KowsalyaMamTestNgClasses"/>
+			<item value="MamKowsalyaNewChrome"/>
+			<item value="KowsalyaMamMavenClasses"/>
+			<item value="ProjectAutomationMaven"/>
+			<item value="PracticeMaven"/>
+			<item value="Maven_Automation_Test"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

@@ -1,0 +1,10 @@
+package org.practicesesssion;
+
+public class MethodTypes {
+public void myName() {
+System.out.println(int a);
+
+}
+
+
+}

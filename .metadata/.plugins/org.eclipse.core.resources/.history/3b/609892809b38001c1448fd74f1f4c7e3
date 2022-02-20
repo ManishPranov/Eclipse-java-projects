@@ -1,0 +1,19 @@
+package org.stringtypes;
+
+public class MutableStringBuffer {
+public static void main(String[] args) {
+	
+	StringBuffer a = new StringBuffer("ManishPranov");
+	System.out.println(a);
+	System.out.println(System.identityHashCode(a));
+
+	StringBuffer b = new StringBuffer("ManishPranov");
+	System.out.println(b);
+	System.out.println(System.identityHashCode(b));
+	
+	StringBuffer c = a.append(b);
+	System.out.println(c);
+	System.out.println(System.identityHashCode(c));
+
+}
+}

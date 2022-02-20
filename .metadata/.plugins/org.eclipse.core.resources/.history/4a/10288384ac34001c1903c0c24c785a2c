@@ -1,0 +1,26 @@
+package org.practicesesssion;
+
+import java.util.Scanner;
+
+public class Sccanner {
+	public static void main(String[] args) {
+	Scanner sr = new Scanner(System.in);
+	
+	System.out.println("more words");
+	String a = sr.nextLine();
+	System.out.println(a);
+	
+	System.out.println("one word");
+	String b = sr.next();
+	System.out.println(b);
+	
+	System.out.println("one value");
+	int c = sr.nextInt();
+	System.out.println(c);
+	
+	System.out.println("decimal values");
+	float d = sr.nextFloat();
+	System.out.println(d);
+	}
+
+}

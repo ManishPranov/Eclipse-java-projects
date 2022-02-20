@@ -1,0 +1,14 @@
+package com.mavenproject.KowsalyaMamPojoParent;
+
+public class PojoParentClass {
+private int a = 100;
+
+public int getA() {
+	return a;
+}
+
+public void setA(int a) {
+	this.a = a;
+}
+
+}

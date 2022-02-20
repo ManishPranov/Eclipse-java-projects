@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Move 0 source folders to &apos;Oops_Abstracrtion&apos;&#x0D;&#x0A;- Destination element: &apos;Oops_Abstracrtion&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move source folders" destination="=Oops_Abstracrtion" flags="6" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveRoots" roots="0" stamp="1639809499839" version="1.0"/>&#x0A;<refactoring comment="Delete resource &apos;ManishPranov&apos;" deleteContents="false" description="Delete resource &apos;ManishPranov&apos;" element1="/ManishPranov" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1639809577671"/>
+</session>

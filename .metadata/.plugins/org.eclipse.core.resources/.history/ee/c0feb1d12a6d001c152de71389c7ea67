@@ -1,0 +1,318 @@
+package com.mavenproject.KowsalyaMamMavenClasses;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Window;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class BaseClass {
+	public static WebDriver driver; // here driver value is null
+
+//	type method ctrl+space
+//	after method created change private to public
+
+	public static WebDriver getBrowser(String browser) {
+//		since there are different browsers we use if and else if
+//		the conditions in if and else if is based on users so we give browser.equalsIgnore case()
+//	1.if statement
+		if (browser.equalsIgnoreCase("Chrome")) {
+//			inside system.setproperty for key driver name is given
+//			for value type system.getproperty() inside bracket type user.dir
+//outside bracket type + within double quotes"copy and paste the folder location alone"
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir") + "\\WebDrivers\\chromedriver.exe");
+
+//			since webdriver is taken as driver in the class variable webdriver = new ChromeDriver(); is written as follow
+			driver = new ChromeDriver();
+
+		}
+//		2.if statement
+
+		else if (browser.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver",
+					System.getProperty("user.dir") + "\\WebDrivers\\geckodriver.exe");
+			driver = new FirefoxDriver();
+
+		} else if (browser.equalsIgnoreCase("internet explorer")) {
+			System.setProperty("webdriver.ie.driver",
+					System.getProperty("user.dir") + "\\WebDrivers\\iedriverserver.exe");
+			driver = new InternetExplorerDriver();
+
+		}
+
+//then type return driver;-	to asign value to driver as user defined
+//		then click the error in the line and change to webdriver
+		// so that the void in this method is replaced with webdriver
+		return driver;
+
+	}
+
+//	create method for webdriver method get
+//	since inside get method it is in the form of string with in double quotes
+	// like string a we give string url
+	public static void getUrl(String url) {
+		driver.get(url);
+
+	}
+
+	public static void max() {
+		driver.manage().window().maximize();
+
+	}
+
+	public static void close() {
+		driver.close();
+
+	}
+
+	public static void quit() {
+		driver.quit();
+
+	}
+
+	public static void getTitle() {
+		String title = driver.getTitle();
+		System.out.println(title);
+
+	}
+
+	public void getCurrentUrl() {
+		String currentUrl = driver.getCurrentUrl();
+		System.out.println(currentUrl);
+	}
+
+	public static void getwindowhandles() {
+		Set<String> windowHandles = driver.getWindowHandles();
+		System.out.println(driver.switchTo().window(windowHandles).getTitle());
+	}
+
+	public static void navigateto(String urlto) {
+		driver.navigate().to(urlto);
+
+	}
+
+	public static void navigateback() {
+		driver.navigate().back();
+
+	}
+
+	public static void navigateforward() {
+		driver.navigate().forward();
+
+	}
+
+	public static void navigateRefresh() {
+		driver.navigate().refresh();
+
+	}
+
+	public static void inputValueElement(WebElement element, String value) {
+		element.sendKeys(value);
+
+	}
+
+	public static void clickOnElement(WebElement element) {
+		element.click();
+
+	}
+
+	public static void gettxt(WebElement element) {
+		String text = element.getText();
+		System.out.println(text);
+	}
+
+	public static void getAtrribute(WebElement element, String atname) {
+		String attribute = element.getAttribute(atname);
+		System.out.println(attribute);
+
+	}
+
+	public static void isDisplayed(WebElement element) {
+		boolean displayed = element.isDisplayed();
+		System.out.println(displayed);
+	}
+
+	public static void isEnabled(WebElement element) {
+		boolean enabled = element.isEnabled();
+		System.out.println(enabled);
+	}
+
+	public static void isSelected(WebElement element) {
+		boolean selected = element.isSelected();
+		System.out.println(selected);
+	}
+
+	public static void clear(WebElement element) {
+		element.clear();
+	}
+
+	public static void radioButton(WebElement element) {
+		element.click();
+	}
+
+	public static void holdbrowser(int millisecs) throws Throwable {
+		Thread.sleep(millisecs);
+
+	}
+
+	public static void implicitwait(int secs) {
+		driver.manage().timeouts().implicitlyWait(secs, TimeUnit.SECONDS);
+
+	}
+
+	public static void alertAccept() {
+		driver.switchTo().alert().accept();
+
+	}
+
+	public static void alertDismiss() {
+		driver.switchTo().alert().dismiss();
+
+	}
+
+	public static void alertSendKeys(String alertvalues) {
+		driver.switchTo().alert().sendKeys(alertvalues);
+
+	}
+
+	public static void alertGetText() {
+		driver.switchTo().alert().getText();
+
+	}
+
+	public static void frameById(int id) {
+		driver.switchTo().frame(id);
+
+	}
+
+	public static void frameByIndex(String index) {
+		driver.switchTo().frame(index);
+
+	}
+
+	public static void frameByElement(String webelement) {
+		driver.switchTo().frame(webelement);
+
+	}
+
+	public static void select(String type, WebElement element, String Value) {
+		Select s = new Select(element);
+		if (type.equalsIgnoreCase("byvalue")) {
+			s.selectByValue(Value);
+
+		} else if (type.equalsIgnoreCase("byindex")) {
+			int parseInt = Integer.parseInt(Value);
+			System.out.println(parseInt);
+		} else if (type.equalsIgnoreCase("byvisibletext")) {
+			s.selectByVisibleText(Value);
+
+		} else if (type.equalsIgnoreCase("ismultiple")) {
+			boolean multiple = s.isMultiple();
+			System.out.println(multiple);
+		} else if (type.equalsIgnoreCase("getfirstselectedoptions")) {
+			WebElement firstSelectedOption = s.getFirstSelectedOption();
+			System.out.println(firstSelectedOption);
+		} else if (type.equalsIgnoreCase("getoptions")) {
+			List<WebElement> options = s.getOptions();
+			System.out.println(options);
+		} else if (type.equalsIgnoreCase("getallselectedoptions")) {
+			List<WebElement> allselectedoptions = s.getAllSelectedOptions();
+			System.out.println(allselectedoptions);
+		}
+
+	}
+
+	public static void methodAction(String type, WebElement element, WebElement elementone) {
+		Actions a = new Actions(driver);
+		if (type.equalsIgnoreCase("draganddrop")) {
+			a.dragAndDrop(element, elementone).build().perform();
+		} else if (type.equalsIgnoreCase("clickandhold")) {
+			a.clickAndHold(element).build().perform();
+		} else if (type.equalsIgnoreCase("movetoelement")) {
+			a.moveToElement(elementone).build().perform();
+		} else if (type.equalsIgnoreCase("release")) {
+			a.release(elementone).build().perform();
+		} else if (type.equalsIgnoreCase("click")) {
+			a.click(element).build().perform();
+		} else if (type.equalsIgnoreCase("rightclick")) {
+			a.contextClick(element).build().perform();
+		} else if (type.equalsIgnoreCase("doubleclick")) {
+			a.doubleClick(element).build().perform();
+		}
+	}
+
+	public static void methodRobot(String type, String value) throws AWTException {
+		Robot r = new Robot();
+		if (type.equalsIgnoreCase("upkeypress")) {
+			r.keyPress(KeyEvent.VK_UP);
+		} else if (type.equalsIgnoreCase("upkeyrelease")) {
+			r.keyRelease(KeyEvent.VK_UP);
+		}
+
+		else if (type.equalsIgnoreCase("downkeypress")) {
+			r.keyPress(KeyEvent.VK_DOWN);
+		} else if (type.equalsIgnoreCase("downkeyrelease")) {
+			r.keyRelease(KeyEvent.VK_DOWN);
+		} else if (type.equalsIgnoreCase("press enter")) {
+			r.keyPress(KeyEvent.VK_ENTER);
+		} else if (type.equalsIgnoreCase("releaseenter")) {
+			r.keyRelease(KeyEvent.VK_ENTER);
+		}
+
+	}
+
+	public static void screenshot(String name) throws Throwable {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File destination = new File(
+				"C:\\Users\\THIRU\\eclipse-workspace\\KowsalyaMamMavenClasses\\Screenshot" + name + ".png");
+		FileUtils.copyFile(source, destination);
+	}
+
+	public static void scrollUpAndScrollDown(String type, WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		if (type.equalsIgnoreCase("scrollup")) {
+
+			js.executeScript("window.scrollBy(1000, 2000)");
+
+		}
+
+		else if (type.equalsIgnoreCase("scrolldown")) {
+
+			js.executeScript("window.scrollBy(1000, -1000)");
+
+		}
+
+		else if (type.equalsIgnoreCase("scrollhome")) {
+
+			js.executeScript("window.scrollBy(0,0)");
+		}
+
+		else if (type.equalsIgnoreCase("click")) {
+
+			js.executeScript("arugments[0].click();", element);
+		} else if (type.equalsIgnoreCase("scrollintoview")) {
+
+			js.executeScript("arugments[0].scrollIntoView();", element);
+		}
+
+	}
+
+}

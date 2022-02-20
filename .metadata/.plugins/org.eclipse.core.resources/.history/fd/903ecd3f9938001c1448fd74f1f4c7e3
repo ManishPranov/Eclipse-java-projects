@@ -1,0 +1,17 @@
+package org.stringtypes;
+
+public class ImmutableStringType {
+public static void main(String[] args) {
+	String a = "ManishPranov";
+	System.out.println(a);
+	System.out.println(System.identityHashCode(a));
+	
+	String b = "ManishPranov";
+	System.out.println(b);
+	System.out.println(System.identityHashCode(b));
+	
+	String c = a.concat(b);
+	System.out.println(c);
+	System.out.println(System.identityHashCode(c));
+}
+}
